@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="updData.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script type="module" src="./scripts/updData.js"></script>
+    <script type="module" src="./scripts/functions.js"></script>
+    <title>Carteirinhas NR11</title>
+</head>
+<body class="updateData">
+    <div class="header">
+        <Table class="tblHeader">
+            <tr>
+                <td style="width: 40%;text-align: left;cursor: unset;" class="noHover">
+                    <img src="./imgs/bosch_logo_sem_fundo.png" alt="bosch_logo" style="width: 27%;padding-left: 2vw;padding-top: 1vh;">
+                </td>
+                <td onclick="location.href='./Index.html'">Home</td>
+                <td onclick="location.href='./med.html'">Ambulatório</td>
+                <td onclick="location.href='./updateData.html'">Dados</td>
+                <td onclick="location.href='./print.html'">Imprimir</td>
+                <td onclick="location.href='./reclass.html'" style="padding-right: 2vw;padding-left: 2vw;">Reclassificar</td>
+            </tr>
+        </Table>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h1 class="titleColab">Dados Colaboradores</h1>
+            <div class="body" id="body">
+                <div class="tableContent">
+                    <i class="fa fa-search"></i> <h2>Busca</h2>
+
+                    <label for="searchEdv"> EDV: <input class="searchBar" id="searchEdv" onkeyup="searchEdv(this.value)"/></label> 
+                    <label for="searchStatus"> Status: <input class="searchBar" id="searchStatus" onkeyup="searchStatus(this.value)"/></label> 
+                    <br><br>
+                    <table id="colabTbl" class="colabTbl">
+                        <thead>
+                            <tr id="tblHeader">
+                                <th style="width: 7%;">Status</th>
+                                <th style="width: 5.5%;">EDV</th>
+                                <th style="width: 20%;">Nome</th>
+                                <th style="width: 4%;">CC</th>
+                                <th style="width: 7%;">Última Imp.</th>
+                                <th style="width: 6%;">ASO</th>
+                                <th style="width: 9%;">BTC</th>
+                                <th style="width: 6%;">CC Bkp.</th>
+                                <th style="width: 9%;">Nome Bkp.</th>
+                                <th style="width: 5%;">Reclass.</th>
+                                <th style="width: 5.5%;">Qtd. Reclass.</th>
+                                <th style="width: 8%;">Ult. Reclass.</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="tbody">
+                            <!-- Função traz os dados -->
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="editWindow" class="editWindow" style="display: none;">
+        <div class="editMed" id="editMed">
+            <h2>Editar Tarefas Especiais</h2><br>
+            <input id="idEdit" hidden/>
+            <label for="edvEdit">EDV:</label> <input type="text" id="edvEdit"> 
+            <label for="dataMed">Data:</label> <input type="date" id="dataMedEdit"><br><br>
+            <label>Óculos Graduado?</label> 
+            <input type="radio" id="oculosNEdit" name="oculos" value="NÃO"> <label for="oculosN">NÃO</label> 
+            <input type="radio" id="oculosSEdit" name="oculos" value="SIM"> <label for="oculosS">SIM</label><br><br>
+            <div style="display: flex; justify-content: space-between; width: 70%;">
+                <div><input type="checkbox" id="nr10Edit"> <label for="nr10">NR10</label></div>
+                <div><input type="checkbox" id="nr11Edit"> <label for="nr11">NR11</label></div>
+                <div><input type="checkbox" id="nr33Edit"> <label for="nr33">NR33</label></div>
+                <div><input type="checkbox" id="nr35Edit"> <label for="nr35">NR35</label></div>
+            </div>
+            
+            <br><br>
+            <button class="save" onclick="updateMed(this)">Salvar</button>
+            <button class="cancel" onclick="cancelMed(this)">Cancelar</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

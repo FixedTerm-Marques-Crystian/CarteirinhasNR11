@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+    <link rel="stylesheet" href="header.css">
+    <title>Carteirinhas NR11</title>
+</head>
+<body>
+    <div class="header">
+        <Table class="tblHeader">
+            <tr>
+                <td style="width: 40%;text-align: left;cursor: unset;" class="noHover">
+                    <img src="./imgs/bosch_logo_sem_fundo.png" alt="bosch_logo" style="width: 27%;padding-left: 2vw;padding-top: 1vh;">
+                </td>
+                <td onclick="location.href='./Index.html'">Home</td>
+                <td onclick="location.href='./med.html'">Ambulatório</td>
+                <td onclick="location.href='./updateData.html'">Dados</td>
+                <td onclick="location.href='./print.html'">Imprimir</td>
+                <td onclick="location.href='./reclass.html'" style="padding-right: 2vw;padding-left: 2vw;">Reclassificar</td>
+            </tr>
+        </Table>
+    </div>
+
+    <div class="content">
+        <div class="body">
+
+            <div class="colab">
+                <center>Colaboradores</center>
+                <div class="colabCard">
+                    <img src="imgs/worker.png" alt="worker" style="width: 30vh;">
+                    <span style="font-size: 120px;margin-left: 2vw;">500</span>
+                </div>
+            </div>
+
+            <div class="status">
+                <center>Status Geral</center>
+                <div style="display: flex;justify-content: center;">
+                    <table>
+                        <tr>
+                            <td style="font-size: 6vh;">
+                                Ativo<br>
+                                <span id="statusNum1" class="statusNum1" style="background-color: rgb(56, 196, 0);">
+                                    280
+                                </span>
+                            </td>
+                            <td style="font-size: 5vh;" >
+                                Vencido<br>
+                                <span id="statusNum2" class="statusNum2" style="background-color: rgb(196, 0, 0);">
+                                    280
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 4vh;">
+                                Incompleto<br>
+                                <span id="statusNum3" class="statusNum3" style="background-color: rgb(228, 137, 0);">
+                                    280
+                                </span>
+                            </td>
+                            <td style="font-size: 6vh;">
+                                Inativo<br>
+                                <span id="statusNum4" class="statusNum4" style="background-color: rgb(145, 145, 145);">
+                                    280
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

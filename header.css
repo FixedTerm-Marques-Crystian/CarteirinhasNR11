@@ -1,0 +1,33 @@
+/* INDEX/HOME CSS --- INDEX/HOME CSS --- INDEX/HOME CSS */
+
+.tblHeader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 5vh;
+    background-color: #4CAF50;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+table.tblHeader td{
+    width: 13%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(97, 97, 97);
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+.tblHeader td:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: ease-in-out 0.2s;
+}
+
+.noHover:hover {
+    background-color: rgba(0, 0, 0, 0) !important; 
+}

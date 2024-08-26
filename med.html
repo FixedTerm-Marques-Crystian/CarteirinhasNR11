@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="med.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="./scripts/med.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <title>Carteirinhas NR11</title>
+</head>
+<body class="med" id="bodyMed">
+    <div class="header">
+        <Table class="tblHeader">
+            <tr>
+                <td style="width: 40%;text-align: left;cursor: unset;" class="noHover">
+                    <img src="./imgs/bosch_logo_sem_fundo.png" alt="bosch_logo" style="width: 27%;padding-left: 2vw;padding-top: 1vh;">
+                </td>
+                <td onclick="location.href='./Index.html'">Home</td>
+                <td onclick="location.href='./med.html'">Ambulatório</td>
+                <td onclick="location.href='./updateData.html'">Dados</td>
+                <td onclick="location.href='./print.html'">Imprimir</td>
+                <td onclick="location.href='./reclass.html'" style="padding-right: 2vw;padding-left: 2vw;">Reclassificar</td>
+            </tr>
+        </Table>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            <h1 class="titleAso">Dados ambulatório</h1>
+            <div class="body" id="body">
+                <div class="actionPanel">
+                    <h2>Cadastrar</h2><br>
+                    <label for="edv">EDV:</label> <input type="number" id="edv" class="addField"> <br><br>
+                    <label for="dataMed">Data:</label> <input type="date" id="dataMed" class="addField"><br><br>
+                    <label>Óculos Graduado?</label> 
+                    <input type="radio" id="oculosN" name="oculos" value="NÃO"> <label for="oculosN">NÃO</label> 
+                    <input type="radio" id="oculosS" name="oculos" value="SIM"> <label for="oculosS">SIM</label><br><br>
+                    <input type="checkbox" id="nr10" class="addField"> <label for="nr10">NR10</label> 
+                    <input type="checkbox" id="nr11" class="addField"> <label for="nr11">NR11</label> 
+                    <input type="checkbox" id="nr33" class="addField"> <label for="nr33">NR33</label> 
+                    <input type="checkbox" id="nr35" class="addField"> <label for="nr35">NR35</label>
+                    
+                    <br><br>
+                    <button class="save" onclick="addMed()">Salvar</button>
+                </div>
+                
+                <div class="tableContent">
+                    <label for="searchBar"><i class="fa fa-search"></i> Busca por EDV: <input class="searchBar" id="searchBar" onkeyup="searchMed(this.value)"/></label> 
+                    <br><br>
+                    <table id="medTbl" class="medTbl">
+                        <thead>
+                            <tr id="tblHeader">
+                                <th onclick="sortTable(0, 'medTbl')">EDV</th>
+                                <th onclick="sortTable(1, 'medTbl')">Óculos Graduado?</th>
+                                <th onclick="sortTable(2, 'medTbl')">Data</th>
+                                <th onclick="sortTable(3, 'medTbl')">NR10</th>
+                                <th onclick="sortTable(4, 'medTbl')">NR11</th>
+                                <th onclick="sortTable(5, 'medTbl')">NR33</th>
+                                <th onclick="sortTable(6, 'medTbl')">NR35</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="tbody">
+                            
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="editWindow" class="editWindow" style="display: none;">
+        <div class="editMed" id="editMed">
+            <h2>Editar Tarefas Especiais</h2><br>
+            <input id="idEdit" hidden/>
+            <label for="edvEdit">EDV:</label> <input type="text" id="edvEdit"> 
+            <label for="dataMed">Data:</label> <input type="date" id="dataMedEdit"><br><br>
+            <label>Óculos Graduado?</label> 
+            <input type="radio" id="oculosNEdit" name="oculos" value="NÃO"> <label for="oculosN">NÃO</label> 
+            <input type="radio" id="oculosSEdit" name="oculos" value="SIM"> <label for="oculosS">SIM</label><br><br>
+            <div style="display: flex; justify-content: space-between; width: 70%;">
+                <div><input type="checkbox" id="nr10Edit"> <label for="nr10">NR10</label></div>
+                <div><input type="checkbox" id="nr11Edit"> <label for="nr11">NR11</label></div>
+                <div><input type="checkbox" id="nr33Edit"> <label for="nr33">NR33</label></div>
+                <div><input type="checkbox" id="nr35Edit"> <label for="nr35">NR35</label></div>
+            </div>
+            
+            <br><br>
+            <button class="save" onclick="updateMed(this)">Salvar</button>
+            <button class="cancel" onclick="cancelMed(this)">Cancelar</button>
+        </div>
+    </div>
+    
+</body>
+</html>

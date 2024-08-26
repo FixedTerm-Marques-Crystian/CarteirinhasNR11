@@ -1,0 +1,78 @@
+
+/* INDEX/HOME CSS --- INDEX/HOME CSS --- INDEX/HOME CSS */
+
+.content {
+    position: absolute;
+    width: 100vw;
+    height: 94vh;
+    top: 7.2vh;
+    left: 0;
+}
+
+.body {
+    display: flex;
+    height: 70vh;
+    width: 100%;
+    padding-top: 10vh;
+    justify-content: space-around;
+    overflow-y: hidden;
+}
+
+.body .colab, .body .status {
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 2vw;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.colab {
+    background-color: rgb(255, 244, 202);
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.colabCard{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5vh;
+    padding: 2vh;
+    border-radius: 25px;
+    border: 3px solid grey;
+    align-items: center;
+}
+
+.status {
+    width: 30vw;
+    background-color: rgb(255, 244, 202);
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.status table{
+    border-spacing: 1vw;
+    border-collapse: separate;
+}
+
+.status table tr td{
+    background-color: rgb(223, 187, 255);
+    width: 11vw;
+    height: 18vh;
+    border: 2px solid rgb(136, 136, 136);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.statusNum1, .statusNum2, .statusNum3, .statusNum4{
+    font-size: 6vh;
+    background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(1em/8);
+    -webkit-background-clip: text;
+    color: rgb(223, 187, 255);
+    padding: calc(calc(1em/10)/2);
+    letter-spacing: calc(1em/11);
+}
